@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-image: url("https://wallpapercave.com/wp/wp2174511.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .container{
+        height: 40vw;
+        width: 30vw;
+        background-color: rgba(76, 92, 69, 0.473);
+        float: right;
+        margin-right: 5vw;
+        margin-top: 3vw;
+        border: 3px solid rgba(63, 60, 60, 0.233);
+        border-radius:5vw 1.5vw 5vw 1.5vw ;
+    }
+    .container:hover{
+        border: 3px solid rgba(39, 36, 36, 0.404);
+        background-color: rgba(34, 41, 30, 0.438);
+    }
+    .signup{
+        font-size: 4vw;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 1vw;
+        color: white;
+    }
+    .subcontainer{
+        height: 30vw;
+        width: 25vw;
+        margin-top: 2vw;
+        margin-left: 1.5vw;
+        display: inline-block;
+        
+    }
+    .subcontainer:hover{
+        .container:hover{
+        border: 3px solid rgba(39, 36, 36, 0.404);
+        background-color: rgba(34, 41, 30, 0.438);
+    }
+    }
+    .subcontainer span{
+       
+        font-size: 1.7vw;
+        font-weight: 300;
+    }
+    .subcontainer div{
+        padding-top: 1vw;
+    }
+    .subcontainer span input{
+        font-size: 1.3vw;
+         color: rgb(8, 8, 8);
+         background-color: rgba(218, 213, 213, 0.952);
+         height: 2vw;
+         border: none;
+         border-radius: 0.4vw;
+         padding-top: 0.1vw;
+         outline:none;
+         
+         margin-left: 2vw;
+    }
+    #submit{
+        margin-top: 3vw;
+        margin-left: 8vw;
+        height: 2.5vw;
+        width: 11vw;
+        font-size: 1.4vw;
+        font-weight: bold;
+        background-color: rgba(117, 107, 107, 0.521);
+        border-radius: 2vw;
+
+    }
+    #submit:hover{
+        background-color: rgba(117, 107, 107, 0.712);
+    }
+    .iflogin{
+        font-size: 1.5vw;
+        font-weight: bolder;
+        margin-left: 3vw; 
+    }
+    .passwordis{
+        font-weight: bold;
+        visibility:hidden;
+        
+    }
+
+</style>
+<body>
+    <div class="container">
+        <div class="signup">Signup</div>
+        <div class="subcontainer">
+            <div>
+                 <span>Name:</span><span><br><input type="text" placeholder="Satyam"></span>
+             </div>
+             <div>
+                    <span>Mobile:</span><span><br><input  type="text"></span>
+             </div>
+        <div>
+            <span>Password:</span><span><br><input class="pass"  type="password"></span>
+            <div  style="padding-top: 0px;padding-left: 2vw;" class="passwordis">Password is :</div>
+        </div>
+        <div>
+            <span>Conform Password:</span><span><input  type="password"></span>
+        </div>
+        <button id="submit">Submit</button>
+        <div class="iflogin">Already have an account?<a href="Login.html">Login</a></div>
+        </div>
+        
+          
+        
+    </div>
+    <script>
+        pass=document.querySelector(".pass");
+        pass.onkeyup=function(){
+           if(pass.length>=8){
+                alert("Strong");
+            }
+        }
+       
+    
+      
+        
+    </script>
+</body>
+</html>
