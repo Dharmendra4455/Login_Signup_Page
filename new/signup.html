@@ -87,24 +87,27 @@
     }
     .passwordis{
         font-weight: bold;
-        visibility:hidden;
-        
+        visibility: hidden;  
     }
-
+   #constraint{
+   
+    font-size: 1.4vw;
+   }
+  
 </style>
 <body>
     <div class="container">
         <div class="signup">Signup</div>
         <div class="subcontainer">
             <div>
-                 <span>Name:</span><span><br><input type="text" placeholder="Satyam"></span>
+                 <span>Name:</span><span><br><input type="text" required="required" placeholder=" Dharmendra"></span>
              </div>
              <div>
-                    <span>Mobile:</span><span><br><input  type="text"></span>
+                    <span>Mobile:</span><span><br><input required="required" type="text"></span>
              </div>
         <div>
-            <span>Password:</span><span><br><input class="pass"  type="password"></span>
-            <div  style="padding-top: 0px;padding-left: 2vw;" class="passwordis">Password is :</div>
+            <span>Password:</span><span><br><input id="pass" required="required" type="password"></span>
+            <div  style="padding-top: 0px;padding-left: 2vw;" class="passwordis">Password is : <span id="constraint">hello</span></div>
         </div>
         <div>
             <span>Conform Password:</span><span><input  type="password"></span>
@@ -117,16 +120,34 @@
         
     </div>
     <script>
-        pass=document.querySelector(".pass");
+        pass=document.querySelector("#pass");
+        passtext=document.querySelector(".passwordis")
+        constraint=document.querySelector("#constraint")
         pass.onkeyup=function(){
-           if(pass.length>=8){
-                alert("Strong");
+            
+            if(pass.value.length<=3)
+           {passtext.style.visibility="visible";
+             constraint.innerHTML="Weak"
+             constraint.style.color="red"
+             pass.style.outline="2px solid red"
+           
+             
             }
-        }
-       
-    
-      
+            else if(pass.value.length>3 && pass.value.length<=8)
+            {
+                constraint.innerHTML="Medium"
+             constraint.style.color="yellow"
+             pass.style.outline="2px solid yellow"
+            }
+           else{
+            constraint.innerHTML="Strong"
+             constraint.style.color="lightgreen"
+             pass.style.outline="2px solid lightgreen"
+            }
         
+        }
+         
+    
     </script>
 </body>
 </html>
